@@ -1,0 +1,63 @@
+---
+title: Welcome to Middleman
+---
+
+	<%
+		urls = [
+			"https://www.youtube.com/watch?v=FIMz4M2Vuw4",
+			"https://www.youtube.com/watch?v=Z1wN6_mCYbw",
+			"https://www.youtube.com/watch?v=A_dYjvKdzR0",
+			"https://www.youtube.com/watch?v=k-atPa3QUis",
+			"https://www.youtube.com/watch?v=aK9ohIzeYSk",
+		]
+	%>
+
+	<%
+		VideoInfo.provider_api_keys = { youtube: 'AIzaSyDOChsks8g3dYJ6LDCbBPhooq9P3OY4Lwc' }
+	%>
+
+	<% 5.times do |i| %>
+  	<!-- Trigger the modal with a button -->
+  	<%vid = VideoInfo.new(urls[i])%>
+  	<button type="button" class="btn btn-info btn-lg play-video" data-toggle="modal" data-target="#myModal" data-video="<%= vid.embed_url %>?autoplay=1">
+  		<img src="<%= vid.thumbnail_large %>" width="300" height="300">	
+  	</button>
+  <%end%>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <iframe id="video" width="95%" height="315" src="" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script type="text/javascript">
+  	$(document).ready(function() {
+		  $('.play-video').on('click', function(ev) {
+		  	var video_url = $(this).data("video");
+		    $("#video")[0].src = video_url;// + "&autoplay=1";
+		    ev.preventDefault();		 
+		  });
+
+		  $('#myModal').on('hidden.bs.modal', function () {
+  			alert("Modal is closing...");
+		    $('iframe').attr('src','');
+
+			})
+
+		});
+  </script>

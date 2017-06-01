@@ -2,6 +2,32 @@
 title: Welcome to Middleman
 ---
 
+  <style type="text/css">
+    
+    .itemsContainer {
+      padding: 10px;
+      position:relative
+    }
+
+    .itemsContainer:hover .play{display:block}
+
+    .play{
+      position : absolute;
+      display:none;
+      top: 1px; 
+      margin:0 auto; left:0px;
+      right:0px;
+      z-index:100
+    } 
+
+    .play img {
+      width: 100%;
+      opacity: 0.85;
+      height: 100%;
+    }
+
+  </style>
+
 	<%
 		urls = [
 			"https://www.youtube.com/watch?v=FIMz4M2Vuw4",
@@ -16,13 +42,20 @@ title: Welcome to Middleman
 		VideoInfo.provider_api_keys = { youtube: 'AIzaSyDOChsks8g3dYJ6LDCbBPhooq9P3OY4Lwc' }
 	%>
 
+  <div class="row">
 	<% 5.times do |i| %>
   	<!-- Trigger the modal with a button -->
   	<%vid = VideoInfo.new(urls[i])%>
-  	<button type="button" class="btn btn-info btn-lg play-video" data-toggle="modal" data-target="#myModal" data-video="<%= vid.embed_url %>?autoplay=1">
-  		<img src="<%= vid.thumbnail_large %>" width="300" height="300">	
-  	</button>
+  		<div class="col-md-6 itemsContainer" style="margin: 15px">  			
+		  	<div class="play-video">
+		  		<img src="<%= vid.thumbnail_large %>" width="100%">	
+		  	</div>
+        <div class="play">
+          <img src="http://embed.wistia.com/deliveries/d49e7d4227ef318a6027642e80d31de13234d414.jpg" class="play-video"  data-toggle="modal" data-target="#myModal" data-video="<%= vid.embed_url %>?autoplay=1"/> 
+        </div>
+  		</div>
   <%end%>
+  </div>
 
 
   <!-- Modal -->
@@ -30,11 +63,8 @@ title: Welcome to Middleman
     <div class="modal-dialog">
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
         <div class="modal-body">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
           <iframe id="video" width="95%" height="315" src="" frameborder="0" allowfullscreen></iframe>
         </div>
         <div class="modal-footer">

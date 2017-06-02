@@ -9,45 +9,84 @@
     <title>Welcome to Middleman</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="stylesheets/site.css" rel="stylesheet" />
-    <script src="javascripts/jquery.min.js"></script>
-    <script src="javascripts/bootstrap.min.js"></script>
-    <script src="javascripts/site.js"></script>
+    <link href="/stylesheets/site.css" rel="stylesheet" />
+    <script src="/javascripts/jquery.min.js"></script><script src="/javascripts/bootstrap.min.js"></script><script src="/javascripts/site.js"></script>
   </head>
   <body>
     <div class="container">
+      <style type="text/css">
     
+    .itemsContainer {
+      padding: 10px;
+      position:relative
+    }
+
+    .itemsContainer:hover .play{display:block}
+
+    .play{
+      position : absolute;
+      display:none;
+      top: 1px; 
+      margin:0 auto; left:0px;
+      right:0px;
+      z-index:100
+    } 
+
+    .play img {
+      width: 100%;
+      opacity: 0.85;
+      height: 100%;
+    }
+
+  </style>
+
+
 
   <div class="row">
   	<!-- Trigger the modal with a button -->
-  		<div class="col-md-6">  			
-		  	<button type="button" class="btn btn-info btn-lg play-video" data-toggle="modal" data-target="#myModal" data-video="https://www.youtube.com/embed/FIMz4M2Vuw4?autoplay=1">
-		  		<img src="https://i.ytimg.com/vi/FIMz4M2Vuw4/hqdefault.jpg" width="300" height="300">	
-		  	</button>
+  		<div class="col-md-6 itemsContainer" style="margin: 15px">  			
+		  	<div class="play-video">
+		  		<img src="https://i.ytimg.com/vi/FIMz4M2Vuw4/hqdefault.jpg" width="100%">	
+		  	</div>
+        <div class="play">
+          <img src="http://embed.wistia.com/deliveries/d49e7d4227ef318a6027642e80d31de13234d414.jpg" class="play-video"  data-toggle="modal" data-target="#myModal" data-video="//www.youtube.com/embed/FIMz4M2Vuw4?autoplay=1"/> 
+        </div>
   		</div>
   	<!-- Trigger the modal with a button -->
-  		<div class="col-md-6">  			
-		  	<button type="button" class="btn btn-info btn-lg play-video" data-toggle="modal" data-target="#myModal" data-video="https://www.youtube.com/embed/Z1wN6_mCYbw?autoplay=1">
-		  		<img src="https://i.ytimg.com/vi/Z1wN6_mCYbw/hqdefault.jpg" width="300" height="300">	
-		  	</button>
+  		<div class="col-md-6 itemsContainer" style="margin: 15px">  			
+		  	<div class="play-video">
+		  		<img src="https://i.ytimg.com/vi/Z1wN6_mCYbw/hqdefault.jpg" width="100%">	
+		  	</div>
+        <div class="play">
+          <img src="http://embed.wistia.com/deliveries/d49e7d4227ef318a6027642e80d31de13234d414.jpg" class="play-video"  data-toggle="modal" data-target="#myModal" data-video="//www.youtube.com/embed/Z1wN6_mCYbw?autoplay=1"/> 
+        </div>
   		</div>
   	<!-- Trigger the modal with a button -->
-  		<div class="col-md-6">  			
-		  	<button type="button" class="btn btn-info btn-lg play-video" data-toggle="modal" data-target="#myModal" data-video="https://www.youtube.com/embed/A_dYjvKdzR0?autoplay=1">
-		  		<img src="https://i.ytimg.com/vi/A_dYjvKdzR0/hqdefault.jpg" width="300" height="300">	
-		  	</button>
+  		<div class="col-md-6 itemsContainer" style="margin: 15px">  			
+		  	<div class="play-video">
+		  		<img src="https://i.ytimg.com/vi/A_dYjvKdzR0/hqdefault.jpg" width="100%">	
+		  	</div>
+        <div class="play">
+          <img src="http://embed.wistia.com/deliveries/d49e7d4227ef318a6027642e80d31de13234d414.jpg" class="play-video"  data-toggle="modal" data-target="#myModal" data-video="//www.youtube.com/embed/A_dYjvKdzR0?autoplay=1"/> 
+        </div>
   		</div>
   	<!-- Trigger the modal with a button -->
-  		<div class="col-md-6">  			
-		  	<button type="button" class="btn btn-info btn-lg play-video" data-toggle="modal" data-target="#myModal" data-video="https://www.youtube.com/embed/k-atPa3QUis?autoplay=1">
-		  		<img src="https://i.ytimg.com/vi/k-atPa3QUis/hqdefault.jpg" width="300" height="300">	
-		  	</button>
+  		<div class="col-md-6 itemsContainer" style="margin: 15px">  			
+		  	<div class="play-video">
+		  		<img src="https://i.ytimg.com/vi/k-atPa3QUis/hqdefault.jpg" width="100%">	
+		  	</div>
+        <div class="play">
+          <img src="http://embed.wistia.com/deliveries/d49e7d4227ef318a6027642e80d31de13234d414.jpg" class="play-video"  data-toggle="modal" data-target="#myModal" data-video="//www.youtube.com/embed/k-atPa3QUis?autoplay=1"/> 
+        </div>
   		</div>
   	<!-- Trigger the modal with a button -->
-  		<div class="col-md-6">  			
-		  	<button type="button" class="btn btn-info btn-lg play-video" data-toggle="modal" data-target="#myModal" data-video="https://www.youtube.com/embed/aK9ohIzeYSk?autoplay=1">
-		  		<img src="https://i.ytimg.com/vi/aK9ohIzeYSk/hqdefault.jpg" width="300" height="300">	
-		  	</button>
+  		<div class="col-md-6 itemsContainer" style="margin: 15px">  			
+		  	<div class="play-video">
+		  		<img src="https://i.ytimg.com/vi/aK9ohIzeYSk/hqdefault.jpg" width="100%">	
+		  	</div>
+        <div class="play">
+          <img src="http://embed.wistia.com/deliveries/d49e7d4227ef318a6027642e80d31de13234d414.jpg" class="play-video"  data-toggle="modal" data-target="#myModal" data-video="//www.youtube.com/embed/aK9ohIzeYSk?autoplay=1"/> 
+        </div>
   		</div>
   </div>
 
